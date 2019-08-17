@@ -1,0 +1,27 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "data self app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malarc01/node-projects.git"
+  },
+  "keywords": [
+    "example",
+    "data",
+    "selfie"
+  ],
+  "author": "based on Joey Lee work",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malarc01/node-projects/issues"
+  },
+  "homepage": "https://github.com/malarc01/node-projects#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
