@@ -10,7 +10,7 @@
     <script>
     if('geolocation' in navigator){
         console.log('geolocation ENABLE');
-        navigator.geolocation.getCurrentPosition(position=>{
+        navigator.geolocation.getCurrentPosition(async position=>{
             const lat = position.coords.latitude;
             const long = position.coords.longitude;
             document.getElementById('latitude').textContent = lat;
@@ -19,12 +19,22 @@
             console.log(position.coords);
             console.log('POSTION=>',position);
             // console.log(position.coords.longitude);
-            
+            const data = {lat,long};
+            const options ={
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data)
+            };
+            const response = await fetch('/api',options);
+            const json = await response.json();
+            console.log(json);
         });
     }    else{
         console.log('geolocation NOT able')
     }
-    </script>
+</script>
     <h1>Data Selfie App</h1>
     <p>Welcome</p>
     <p>latitude:<span id="latitude"></span>&deg;<br/>
